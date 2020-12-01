@@ -23,7 +23,8 @@ body {
   margin: 0;
 }
 rect:hover,
-path:hover {
+path:hover,
+circle:hover {
   stroke: black;
   stroke-width: 1px;
 }
@@ -48,7 +49,7 @@ path:hover {
   font-size: 15px;
   font-family: Helvetica;
   font-weight: lighter;
-  width: 180px;
+  width: 150px;
 }
 
 .gallery {
