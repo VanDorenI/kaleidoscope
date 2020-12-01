@@ -1,0 +1,95 @@
+body {
+  background-color: white;
+}
+rect:hover,
+path:hover {
+  stroke: black;
+  stroke-width: 1px;
+}
+.header {
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  padding: 50px;
+  font-family: helvetica;
+  font-size: 60px;
+}
+h2 {
+  text-align: right;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: lighter;
+}
+.gallery {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 10px;
+}
+.button {
+  background-color: #a5a5a5;
+  border: none;
+  color: white;
+  padding: 30px 600px;
+  display: block;
+  font-size: 15px;
+  font-family: helvetica;
+  font-weight: lighter;
+  margin: 10px;
+}
+.button1 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+
+.button1:hover {
+  background-color: #a8a8a8;
+}
+
+.button2 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+
+.button2:hover {
+  background-color: #a8a8a8;
+}
+
+.button3 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+
+.button3:hover {
+  background-color: #a8a8a8;
+}
+
+.button4 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+
+.button4:hover {
+  background-color: #a8a8a8;
+}
+
+.button5 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+
+.button5:hover {
+  background-color: #a8a8a8;
+}
+.button6 {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 600px;
+}
+.button6:hover {
+  background-color: #a8a8a8;
+}
