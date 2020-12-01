@@ -3,9 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <a href="index.html">Page2</a>
+    <header>
+      <a href="index.html">Back to home</a>
+    </header>
+
+    <div class="side-by-side">
+      <div class="buttons">
+        <button class="button button-regular">Regular</button>
+        <button class="button button-bold">Bold</button>
+      </div>
+      <input type="text" placeholder="type here" class="preview regular" />
+    </div>
+    <script>
+      document
+        .querySelector(".button-regular")
+        .addEventListener("click", () => {
+          document.querySelector(".preview").className = "preview regular";
+        });
+      document.querySelector(".button-bold").addEventListener("click", () => {
+        document.querySelector(".preview").className = "preview bold";
+      });
+    </script>
   </body>
 </html>

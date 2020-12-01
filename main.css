@@ -1,5 +1,26 @@
+@font-face {
+  font-family: ChunkFive;
+  font-weight: 400;
+  src: url(./fonts/ChunkFive-Regular.otf);
+}
+
+@font-face {
+  font-family: ChunkFive;
+  font-weight: 800;
+  src: url(./fonts/ChunkFive-Print.otf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 body {
   background-color: white;
+  margin: 0;
 }
 rect:hover,
 path:hover {
@@ -12,84 +33,88 @@ path:hover {
   padding: 50px;
   font-family: helvetica;
   font-size: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
-h2 {
+
+.header h1 {
+  font-family: ChunkFive;
+  font-weight: 800;
+}
+
+.header h2 {
   text-align: right;
   font-size: 15px;
   font-family: Helvetica;
   font-weight: lighter;
+  width: 180px;
 }
+
 .gallery {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 10px;
 }
+
+/**** BUTTONS ****/
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 .button {
-  background-color: #a5a5a5;
+  display: block;
   border: none;
   color: white;
-  padding: 30px 600px;
-  display: block;
+  padding: 30px;
   font-size: 15px;
   font-family: helvetica;
   font-weight: lighter;
-  margin: 10px;
-}
-.button1 {
+  margin: 10px 50px;
   background-color: rgb(237, 237, 237);
   color: black;
-  width: 600px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.button1:hover {
+.button:hover {
   background-color: #a8a8a8;
 }
 
-.button2 {
-  background-color: rgb(237, 237, 237);
-  color: black;
-  width: 600px;
+/**** PREVIEW ****/
+
+.preview {
+  font-size: 48px;
+  font-family: ChunkFive;
+
+  /* border: none; */
+  /* outline: none; */
 }
 
-.button2:hover {
-  background-color: #a8a8a8;
+.preview.regular {
+  font-weight: 400;
 }
 
-.button3 {
-  background-color: rgb(237, 237, 237);
-  color: black;
-  width: 600px;
+.preview.bold {
+  font-weight: 800;
 }
 
-.button3:hover {
-  background-color: #a8a8a8;
+.side-by-side {
+  display: flex;
 }
 
-.button4 {
-  background-color: rgb(237, 237, 237);
-  color: black;
-  width: 600px;
+.button-regular {
+  font-size: 48px;
+  font-family: ChunkFive;
+  font-weight: 400;
 }
 
-.button4:hover {
-  background-color: #a8a8a8;
-}
-
-.button5 {
-  background-color: rgb(237, 237, 237);
-  color: black;
-  width: 600px;
-}
-
-.button5:hover {
-  background-color: #a8a8a8;
-}
-.button6 {
-  background-color: rgb(237, 237, 237);
-  color: black;
-  width: 600px;
-}
-.button6:hover {
-  background-color: #a8a8a8;
+.button-bold {
+  font-size: 48px;
+  font-family: ChunkFive;
+  font-weight: 800;
 }
