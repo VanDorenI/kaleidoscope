@@ -14,12 +14,16 @@
 
     <div class="side-by-side">
       <div class="buttons">
+        <button class="button button-light">Light</button>
         <button class="button button-regular">Regular</button>
         <button class="button button-bold">Bold</button>
       </div>
       <input type="text" placeholder="type here" class="preview regular" />
     </div>
     <script>
+      document.querySelector(".button-light").addEventListener("click", () => {
+        document.querySelector(".preview").className = "preview light";
+      });
       document
         .querySelector(".button-regular")
         .addEventListener("click", () => {
