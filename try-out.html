@@ -9,16 +9,22 @@
   </head>
   <body>
     <header>
-      <a href="index.html">Back to home</a>
+      <a href="index.html">Go Back</a>
     </header>
-
+    <div class="header">
+      <h3>Kaleidoscope: try-out</h3>
+      <h2><i> original font/ my font</i></h2>
+    </div>
     <div class="side-by-side">
       <div class="buttons">
         <button class="button button-light">Light</button>
         <button class="button button-regular">Regular</button>
         <button class="button button-bold">Bold</button>
+        <button class="button button-lightblack">Light black</button>
+        <button class="button button-regularblack">Regular black</button>
+        <button class="button button-boldblack">Bold black</button>
       </div>
-      <input type="text" placeholder="type here" class="preview regular" />
+      <input type="text" placeholder="type here..." class="preview regular" />
     </div>
     <script>
       document.querySelector(".button-light").addEventListener("click", () => {
@@ -32,6 +38,25 @@
       document.querySelector(".button-bold").addEventListener("click", () => {
         document.querySelector(".preview").className = "preview bold";
       });
+      document
+        .querySelector(".button-lightblack")
+        .addEventListener("click", () => {
+          document.querySelector(".preview").className = "preview lightblack";
+        });
+      document
+        .querySelector(".button-regularblack")
+        .addEventListener("click", () => {
+          document.querySelector(".preview").className = "preview regularblack";
+        });
+      document
+        .querySelector(".button-boldblack")
+        .addEventListener("click", () => {
+          document.querySelector(".preview").className = "preview boldblack";
+        });
     </script>
+
+    <div class="footer">
+      <p><i>Font made by Indra Van Doren</i></p>
+    </div>
   </body>
 </html>

@@ -76,11 +76,18 @@ circle:hover {
 
 .header h2 {
   text-align: right;
-  font-size: 15px;
+  font-size: 18px;
   font-family: Helvetica;
   font-weight: lighter;
-  width: 150px;
+  width: 180px;
 }
+.header h3 {
+  font-family: kaleidoscope;
+  font-weight: 200;
+  font-size: 100px;
+}
+
+/*** AFBEELDINGEN GRID***/
 
 .gallery {
   margin-top: 10px;
@@ -116,23 +123,45 @@ circle:hover {
   background-color: #a8a8a8;
 }
 
-/**** PREVIEW ****/
-
+/**** PREVIEW TRY-OUT TEKST SCHIJVEN ****/
 .preview {
-  font-size: 48px;
-  font-family: ChunkFive;
+  font-size: 50px;
+  font-family: kaleidoscope;
 
   /* border: none; */
   /* outline: none; */
 }
 
+.preview.light {
+  font-family: kaleidoscope;
+  font-weight: 100;
+}
+
 .preview.regular {
-  font-weight: 400;
+  font-family: kaleidoscope;
+  font-weight: 200;
 }
 
 .preview.bold {
-  font-weight: 800;
+  font-family: kaleidoscope;
+  font-weight: 300;
 }
+.preview.lightblack {
+  font-family: kaleidoscope;
+  font-weight: 400;
+}
+
+.preview.regularblack {
+  font-family: kaleidoscope;
+  font-weight: 500;
+}
+
+.preview.boldblack {
+  font-family: kaleidoscope;
+  font-weight: 600;
+}
+
+/*** BUTTONS TRY_OUT***/
 
 .side-by-side {
   display: flex;
@@ -153,4 +182,34 @@ circle:hover {
   font-size: 24px;
   font-family: kaleidoscope;
   font-weight: 300;
+}
+.button-lightblack {
+  font-size: 24px;
+  font-family: kaleidoscope;
+  font-weight: 400;
+}
+.button-regularblack {
+  font-size: 24px;
+  font-family: kaleidoscope;
+  font-weight: 500;
+}
+
+.button-boldblack {
+  font-size: 24px;
+  font-family: kaleidoscope;
+  font-weight: 600;
+}
+
+/*** FOOTER***/
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(237, 237, 237);
+  color: white;
+  text-align: center;
+  font-family: helvetica;
+  font-weight: lighter;
+  padding: 8px;
 }
