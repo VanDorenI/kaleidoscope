@@ -213,3 +213,40 @@ circle:hover {
   font-weight: lighter;
   padding: 8px;
 }
+
+/*** CREATE PAGE ***/
+.app {
+  display: grid;
+  grid-template-rows: 75px 65px 1fr 50px;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: kaleidoscope;
+  font-weight: 200;
+  margin: 60px;
+}
+
+.glyphs {
+  display: grid;
+  grid-template-columns: repeat(26, 65px);
+  overflow-x: auto;
+}
+
+.glyphs .glyph {
+  color: rgb(165, 164, 164);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.glyphs .glyph:nth-child(even) {
+  background: red;
+}
+
+.glyphs .glyph.active {
+  background-color: black;
+}

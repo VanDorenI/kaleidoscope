@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <a href="index.html">Go back</a>
   <div class="header">
@@ -15,6 +16,15 @@
   
     <div id="canvas"></div>
     <script src="createyourowngrid.js"></script>
+
+    <div class="app">
+      <header><h1>choose the letter you want to create</h1></header>
+      <div class="glyphs">
+        <div class="glyph" :class="{active: glyph === currentGlyph} " v-for="glyph in glyphs">A</div>
+      </div>
+    
+
+
     <div class="footer">
       <p><i>Font made by Indra Van Doren</i></p>
     </div>
