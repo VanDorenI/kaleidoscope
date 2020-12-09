@@ -10,20 +10,12 @@
   <a href="index.html">Go back</a>
   <div class="header">
     <h3>Kaleidoscope: create</h3>
-    <h2><i> click on the grid to make a letter</i></h2>
+    <h2>click on the grid to make a letter</h2>
   </div>
   <body>
   
     <div id="canvas"></div>
     <script src="createyourowngrid.js"></script>
-
-    <div class="app">
-      <header><h1>choose the letter you want to create</h1></header>
-      <div class="glyphs">
-        <div class="glyph" :class="{active: glyph === currentGlyph} " v-for="glyph in glyphs">A</div>
-      </div>
-    
-
 
     <div class="footer">
       <p><i>Font made by Indra Van Doren</i></p>

@@ -6086,11 +6086,12 @@
 	<g id="midden_groot_midden_2">
 		<rect id="light-vertc-midden-groot-midden2" x="233.452" y="161.684" fill="#006C68" width="9" height="522"/>
 		<rect id="regular-vertc-midden-groot-midden2" x="601.557" y="142.789" fill="#006C68" width="27" height="558"/>
-		<rect id="bold-vertc-midden-groot-midden2" x="978.978" y="134.105" fill="#006C68" width="45" height="594"/>
+		<rect id="bold-vertc-midden-groot-midden2" x="969.662" y="124.789" fill="#006C68" width="45" height="594"/>
 	</g>
 	<g id="midden_groot_midden_1">
 		<rect id="light-vertc-midden-groot-midden1_1_" x="224.452" y="161.684" fill="#006C68" width="9" height="522"/>
 		<rect id="regular-vertc-midden-groot-midden1_2_" x="574.557" y="142.789" fill="#006C68" width="27" height="558"/>
+		<rect id="bold-vertc-midden-groot-midden2_1_" x="924.662" y="124.789" fill="#006C68" width="45" height="594"/>
 	</g>
 	<g id="midden_groot_links">
 		<rect id="light-vertc-midden-groot-links" x="107.452" y="161.684" fill="#006C68" width="9" height="522"/>
@@ -6193,6 +6194,18 @@
 		<circle id="light-bol-1_1_" fill="#F6B1A6" cx="116.452" cy="170.684" r="9"/>
 		<circle id="regular-bol-1_2_" fill="#F6B1A6" cx="502.557" cy="169.789" r="27"/>
 		<circle id="bold-bol-1_1_" fill="#F6B1A6" cx="888.662" cy="169.789" r="45"/>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
 	</g>
 </g>
 </svg>
