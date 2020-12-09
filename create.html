@@ -6,19 +6,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
     <script src="https://unpkg.com/vue@next"></script>
+    
   </head>
-  <a href="index.html">Go back</a>
+  <div class="buttons">
+    <a href="index.html" class= button> go back </a>
+  </div>
+ 
+
   <div class="header">
     <h3>Kaleidoscope: create</h3>
     <h2>click on the grid to make a letter</h2>
   </div>
   <body>
   
+ <div class="app">
+      <div class="glyphs">
+        <div
+          class="glyph"
+          v-for="glyph in glyphs"
+          @click="currentGlyph=glyph"
+          :class="{ active: glyph === currentGlyph }"
+        >
+          {{ glyph }}
+        </div>
+      </div>
+    </div>
+
     <div id="canvas"></div>
     <script src="createyourowngrid.js"></script>
 
+   
+
     <div class="footer">
-      <p><i>Font made by Indra Van Doren</i></p>
+      <p>Font made by Indra Van Doren</p>
     </div>
   </body>
 </html>

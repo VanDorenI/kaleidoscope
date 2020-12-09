@@ -1,8 +1,10 @@
 // het document
+console. log("hello");
+
 const canvas = document.getElementById("canvas");
 
 async function loadfont() {
-  const res = await fetch("gridmaker-webversie-kaleidoscope.svg");
+  const res = await fetch("gridmaker-webversie-kaleidoscope-def.svg");
   const svgCode = await res.text();
 
   canvas.outerHTML = svgCode;
@@ -41,3 +43,46 @@ function toggleShape(e) {
 }
 loadfont();
 
+
+
+
+const GLYPHS = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+
+const app = Vue.createApp({
+  data() {
+    return {
+      glyphs: GLYPHS,
+      currentGlyph: "Q",
+      currentStyle: "regular",
+    };
+  },
+});
+
+const mountedApp = app.mount(".app");

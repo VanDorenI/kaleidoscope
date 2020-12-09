@@ -72,7 +72,7 @@ circle:hover {
 .header h1 {
   font-family: kaleidoscope;
   font-weight: 200;
-  font-size: 50px;
+  font-size: 150px;
 }
 
 .header h2 {
@@ -109,7 +109,7 @@ circle:hover {
   border: none;
   color: white;
   padding: 30px;
-  font-size: 24px;
+  font-size: 35px;
   font-family: kaleidoscope;
   font-weight: 200;
   margin: 10px 50px;
@@ -215,19 +215,60 @@ circle:hover {
   padding: 8px;
 }
 
-/*** CREATE PAGE ***/
-.app {
-  display: grid;
-  grid-template-rows: 75px 65px 1fr 50px;
-  height: 100vh;
+/**** CREATE ****/
+:root {
+  --green-100: #eeffe7;
+  --green-200: #d3ffbe;
+  --green-300: #a9fa83;
+  --green-400: #7cf443;
+  --green-500: #59ef12;
+  --green-600: #55b727;
+  --green-700: #55a331;
+  --green-800: #4c8b2e;
+  --green-900: #3c5630;
+
+  --teal-100: #cffbf0;
+  --teal-200: #a3e5d5;
+  --teal-300: #86d5c2;
+  --teal-400: #58ae9a;
+  --teal-500: #498d7d;
+  --teal-600: #377566;
+  --teal-700: #2d6457;
+  --teal-800: #26594d;
+  --teal-900: #2d4b44;
 }
 
-h1 {
-  font-size: 50px;
-  font-family: kaleidoscope;
-  font-weight: 200;
-  margin: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
+
+/**** APP ****/
+
+.app {
+  display: grid;
+  grid-template-rows: 65px 65px 1fr 50px;
+  height: 15vh;
+}
+
+/**** HEADER ****/
+
+header {
+  background: none;
+  color: white;
+  display: grid;
+  align-items: center;
+  border-bottom: 5px solid none;
+}
+
+header h1 {
+  font-size: 24px;
+  padding: 0 2rem;
+}
+
+/**** GLYPHS ****/
 
 .glyphs {
   display: grid;
@@ -236,19 +277,21 @@ h1 {
 }
 
 .glyphs .glyph {
-  color: rgb(165, 164, 164);
+  background: rgb(202, 202, 202);
+  color: rgb(8, 7, 7);
   display: grid;
   place-items: center;
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 30px;
+  font-family: kaleidoscope;
+  font-weight: 500;
   cursor: pointer;
 }
 
 .glyphs .glyph:nth-child(even) {
-  background: red;
+  background: rgb(237, 237, 237);
 }
 
 .glyphs .glyph.active {
-  background-color: black;
+  background-color: rgb(255, 185, 55);
 }
-/*** TRY_OUT***/
+/**** PREVIEW ****/
