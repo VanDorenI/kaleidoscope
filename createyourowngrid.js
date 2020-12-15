@@ -126,7 +126,7 @@ const app = Vue.createApp({
           "Horiz-4",
         ],
       },
-      currentGlyph: "",
+      currentGlyph: "A",
       currentStyle: "regular",
     };
   },
@@ -190,3 +190,8 @@ window.addEventListener("keydown", (e) => {
     mountedApp.copySegments();
   }
 });
+
+window.setTimeout(() => {
+mountedApp.currentGlyph = 'A';
+mountedApp.updateVisibleSegments();
+}, 500);
