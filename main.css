@@ -63,29 +63,27 @@ circle:hover {
   padding: 50px;
   font-family: helvetica;
   font-size: 100px;
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .header h1 {
   font-family: kaleidoscope;
   font-weight: 200;
   font-size: 150px;
+  text-align: center;
 }
 
 .header h2 {
-  text-align: right;
+  text-align: center;
   font-size: 18px;
   font-family: Helvetica;
   font-weight: lighter;
-  width: 180px;
 }
 .header h3 {
   font-family: kaleidoscope;
   font-weight: 200;
   font-size: 100px;
+  text-align: center;
 }
 
 /*** AFBEELDINGEN GRID***/
@@ -94,9 +92,32 @@ circle:hover {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 30px;
 }
 
+/*** GROTE AFBEELDINGEN INDEX***/
+.gallery2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*** AFBEELDINGEN INDEX***/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 0%;
+  padding: 0 20px;
+}
+
+.column img {
+  margin-top: 100px;
+}
 /**** BUTTONS ****/
 
 .buttons {
@@ -112,16 +133,11 @@ circle:hover {
   font-size: 35px;
   font-family: kaleidoscope;
   font-weight: 200;
-  margin: 10px 50px;
-  background-color: rgb(237, 237, 237);
+  margin: 0px 50px;
   color: black;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-}
-
-.button:hover {
-  background-color: #a8a8a8;
 }
 
 /**** PREVIEW TRY-OUT TEKST SCHIJVEN ****/
@@ -216,27 +232,6 @@ circle:hover {
 }
 
 /**** CREATE ****/
-:root {
-  --green-100: #eeffe7;
-  --green-200: #d3ffbe;
-  --green-300: #a9fa83;
-  --green-400: #7cf443;
-  --green-500: #59ef12;
-  --green-600: #55b727;
-  --green-700: #55a331;
-  --green-800: #4c8b2e;
-  --green-900: #3c5630;
-
-  --teal-100: #cffbf0;
-  --teal-200: #a3e5d5;
-  --teal-300: #86d5c2;
-  --teal-400: #58ae9a;
-  --teal-500: #498d7d;
-  --teal-600: #377566;
-  --teal-700: #2d6457;
-  --teal-800: #26594d;
-  --teal-900: #2d4b44;
-}
 
 * {
   margin: 0;
@@ -251,21 +246,6 @@ circle:hover {
   display: grid;
   grid-template-rows: 65px 65px 1fr 50px;
   height: 15vh;
-}
-
-/**** HEADER ****/
-
-header {
-  background: none;
-  color: white;
-  display: grid;
-  align-items: center;
-  border-bottom: 5px solid none;
-}
-
-header h1 {
-  font-size: 24px;
-  padding: 0 2rem;
 }
 
 /**** GLYPHS ****/
@@ -294,4 +274,3 @@ header h1 {
 .glyphs .glyph.active {
   background-color: rgb(255, 185, 55);
 }
-/**** PREVIEW ****/
