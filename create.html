@@ -6,25 +6,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
     <script src="https://unpkg.com/vue@next"></script>
-    
+
   </head>
   <div class="buttons">
     <a href="index.html" class= button> go back </a>
   </div>
- 
+
 
   <div class="header">
     <h3>Kaleidoscope: create</h3>
     <h2>click on the grid to make a letter</h2>
   </div>
   <body>
-  
+
  <div class="app">
       <div class="glyphs">
         <div
           class="glyph"
           v-for="glyph in glyphs"
-          @click="currentGlyph=glyph"
+          @click="setCurrentGlyph(glyph)"
           :class="{ active: glyph === currentGlyph }"
         >
           {{ glyph }}
@@ -32,10 +32,18 @@
       </div>
     </div>
 
-    <div id="canvas"></div>
+    <div id="canvas">
+      <g id="rechts_onder_4_1_" display="inline">
+        <path id="light-part-vol-rechts-onder4_1_" fill="#13582A" d="M233.452,539.684v-117h117
+          C350.452,487.301,298.069,539.684,233.452,539.684z" :visible="currentSegments.includes('part-vol-rechts-onder4')" />
+        <path id="regular-part-vol-rechts-onder4_2_" fill="#13582A" d="M601.557,421.789v99c54.676,0,99-44.324,99-99
+          C667.557,421.789,634.557,421.789,601.557,421.789z"/>
+        <path id="bold-part-vol-rechts-onder4_1_" fill="#13582A" d="M1050.662,421.789c0,44.735-36.265,81-81,81v-81H1050.662z"/>
+      </g>
+    </div>
     <script src="createyourowngrid.js"></script>
 
-   
+
 
     <div class="footer">
       <p>Font made by Indra Van Doren</p>
