@@ -52,11 +52,14 @@ async function loadfont() {
   for (const group of groups) {
     group.setAttribute("display", "inline");
   }
+
+  mountedApp.currentGlyph = "A";
+  mountedApp.updateVisibleSegments();
 }
 function toggleShape(e) {
   const shape = e.target;
   const segmentName = toShortSegmentName(shape.id);
-  console.log(mountedApp.currentSegmentNames)
+  console.log(mountedApp.currentSegmentNames);
   if (shape.getAttribute("fill") === "rgba(0, 0, 0, 0)") {
     shape.setAttribute("fill", "black");
     mountedApp.currentSegments.push(segmentName);
@@ -133,7 +136,7 @@ const app = Vue.createApp({
   computed: {
     currentSegments() {
       return this.allSegments[this.currentGlyph];
-    }
+    },
   },
   methods: {
     setCurrentGlyph(glyph) {
@@ -190,8 +193,3 @@ window.addEventListener("keydown", (e) => {
     mountedApp.copySegments();
   }
 });
-
-window.setTimeout(() => {
-mountedApp.currentGlyph = 'A';
-mountedApp.updateVisibleSegments();
-}, 500);
