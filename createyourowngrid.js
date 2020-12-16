@@ -106,11 +106,15 @@ const app = Vue.createApp({
     return {
       glyphs: GLYPHS,
       allSegments: {
-        A: ["part-contour-links-onder4",
-        "part-contour-rechts-boven3",
-        "part-contour-rechts-boven2",
-        "part-contour-links-boven3",
-        "vertc-midden-klein-rechts"]
+        A: [
+          "part-contour-rechts-boven3",
+          "part-contour-links-boven4",
+          "part-contour-rechts-boven4",
+          "part-contour-links-onder5",
+          "part-contour-rechts-boven5",
+          "part-contour-rechts-onder5",
+          "vertc-midden-groot-rechts",
+        ],
         B: [
           "part-vol-links-onder1",
           "part-vol-rechts-boven1",
