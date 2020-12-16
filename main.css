@@ -57,6 +57,12 @@ circle:hover {
 }
 /**** HEADER ***/
 
+@media all and (max-width: 600px) {
+
+	.header{
+	
+	}
+
 .header {
   background-color: rgb(255, 255, 255);
   text-align: left;
@@ -64,12 +70,13 @@ circle:hover {
   font-family: helvetica;
   font-size: 100px;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .header h1 {
   font-family: kaleidoscope;
   font-weight: 200;
-  font-size: 150px;
+  font-size: 180px;
   text-align: center;
 }
 
@@ -101,6 +108,12 @@ circle:hover {
   align-items: center;
   justify-content: center;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 /*** AFBEELDINGEN INDEX***/
 .row {
@@ -117,6 +130,11 @@ circle:hover {
 
 .column img {
   margin-top: 100px;
+  width: 85%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /**** BUTTONS ****/
 
@@ -144,7 +162,8 @@ circle:hover {
 .preview {
   font-size: 50px;
   font-family: kaleidoscope;
-
+  width: 900px;
+  margin: 0px 50px;
   /* border: none; */
   /* outline: none; */
 }
@@ -185,36 +204,42 @@ circle:hover {
 }
 
 .button-light {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 100;
+  background-color: white;
 }
 .button-regular {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 200;
+  background-color: white;
 }
 
 .button-bold {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 300;
+  background-color: white;
 }
 .button-lightblack {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 400;
+  background-color: white;
 }
 .button-regularblack {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 500;
+  background-color: white;
 }
 
 .button-boldblack {
-  font-size: 24px;
+  font-size: 30px;
   font-family: kaleidoscope;
   font-weight: 600;
+  background-color: white;
 }
 
 /*** FOOTER***/
