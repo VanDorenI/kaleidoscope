@@ -57,6 +57,12 @@ circle:hover {
 }
 /**** HEADER ***/
 
+@media all and (max-width: 700px) {
+  aside,
+  article {
+    grid-column: 1 / 4;
+  }
+}
 .header {
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -64,7 +70,7 @@ circle:hover {
   font-family: helvetica;
   font-size: 100px;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 30px;
   align-content: baseline;
   width: 100%;
 }
@@ -110,23 +116,20 @@ circle:hover {
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   padding: 0;
-  flex-grow: 1;
   list-style: none;
-  margin: 10px 0 0 2%;
+  margin: 80px;
 }
 .flex-item {
-  padding: 5px;
-  width: 200px;
+  padding: 0 20px;
+  width: 350px;
   justify-content: center;
   align-content: space-around;
   margin-top: 10px;
   line-height: 10px;
-  text-align: center;
-  flex: "flex-grow", "flex-shrink", "flex-basis";
-  flex-basis: auto;
-  width: calc(100% * (1 / 4) - 10px - 1px);
+  flex: 3 33%;
 }
 
 /*** MILION OPTIONS GRID ***/
