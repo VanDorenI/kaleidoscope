@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Kaleidoscope: create</title>
     <link rel="stylesheet" href="main.css" />
     <script src="https://unpkg.com/vue@next"></script>
 
@@ -15,10 +15,10 @@
 
   <div class="header">
     <h3>Kaleidoscope: create</h3>
-    <h2>click on the grid to make a letter</h2>
+    <h4>-> make your own font with the kaleidoscope-grid, just click on the grid to change the letters! <-</h4>
   </div>
   <body>
-
+    <div class="side-by-side">
  <div class="app">
       <div class="glyphs">
         <div
@@ -31,8 +31,7 @@
         </div>
       </div>
     </div>
-
-    <div id="canvas">
+    <div id="canvas">>
       <g id="rechts_onder_4_1_" display="inline">
         <path id="light-part-vol-rechts-onder4" fill="#13582A" d="M233.452,539.684v-117h117
           C350.452,487.301,298.069,539.684,233.452,539.684z" :visible="currentSegments.includes('part-vol-rechts-onder4')" />
@@ -41,12 +40,12 @@
         <path id="bold-part-vol-rechts-onder4" fill="#13582A" d="M1050.662,421.789c0,44.735-36.265,81-81,81v-81H1050.662z"/>
       </g>
     </div>
-    <script src="createyourowngrid.js"></script>
-
-
+    <script src="createyourowngrid.js" width="500px" height="500px" viewBox="0 0 500 500" ></script>
+    </div>
+  </div>
 
     <div class="footer">
-      <p>Font made by Indra Van Doren</p>
+      <p>Indra Van Doren</p>
     </div>
   </body>
 </html>

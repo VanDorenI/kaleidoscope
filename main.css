@@ -34,35 +34,17 @@
   src: url(./fonts/Kaleidoscope-Bold\ Black.otf);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 img {
   max-width: 100%;
 }
 
 body {
   background-color: white;
-  margin: 0;
+  margin: 50px;
 }
 
-/*** SVG***/
-
-rect:hover,
-path:hover,
-circle:hover {
-  stroke: rgb(97, 95, 95);
-  stroke-width: 1px;
-}
 /**** HEADER ***/
 
-@media all and (max-width: 700px) {
-  aside,
-  article {
-    grid-column: 1 / 4;
-  }
-}
 .header {
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -102,17 +84,18 @@ circle:hover {
   text-align: center;
   padding: 0px 0;
   margin: 50px;
+  margin-bottom: 180px;
 }
 
-/*** AFBEELDINGEN GRID***/
-
-.gallery {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 30px;
-  width: 100%;
+.header h4 {
+  font-family: kaleidoscope;
+  font-weight: 400;
+  font-size: 35px;
+  margin-top: -100px;
 }
+
+/*** AFBEELDINGEN/BUTTON GRID***/
+
 .container {
   display: flex;
   flex-flow: row wrap;
@@ -120,7 +103,8 @@ circle:hover {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   padding: 0;
   list-style: none;
-  margin: 80px;
+  margin: 30px;
+  widows: 50px;
 }
 .flex-item {
   padding: 0 20px;
@@ -137,43 +121,11 @@ circle:hover {
 .gallery3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(8, 25vw);
   grid-gap: 20px;
+  margin: 50px;
+  grid-gap: 50px;
 }
 
-/*** GROTE AFBEELDINGEN INDEX***/
-.gallery2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*** AFBEELDINGEN INDEX***/
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 0%;
-  padding: 0 20px;
-}
-
-.column img {
-  margin-top: 100px;
-  width: 65%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 /**** BUTTONS ****/
 
 .buttons {
@@ -189,7 +141,7 @@ circle:hover {
   font-size: 35px;
   font-family: kaleidoscope;
   font-weight: 200;
-  margin: 0px 50px;
+  margin: 0px 0px;
   color: black;
   text-align: center;
   text-decoration: none;
@@ -199,13 +151,10 @@ circle:hover {
 
 /**** PREVIEW TRY-OUT TEKST SCHIJVEN ****/
 .preview {
-  font-size: 50px;
+  font-size: 90px;
   font-family: kaleidoscope;
-  width: 900px;
+  width: 20000px;
   margin: 0px 50px;
-
-  /* border: none; */
-  /* outline: none; */
 }
 
 .preview.light {
@@ -288,8 +237,8 @@ circle:hover {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(216, 216, 216);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(148, 148, 148);
   text-align: center;
   font-family: helvetica;
   font-weight: lighter;
@@ -300,43 +249,47 @@ circle:hover {
 /**** CREATE ****/
 
 * {
-  margin: 10;
+  margin: 90;
   padding: 10;
   box-sizing: border-box;
   user-select: none;
+  align-content: center;
 }
 
-/**** APP ****/
+/*** SVG***/
+
+rect:hover,
+path:hover,
+circle:hover {
+  stroke: rgb(97, 95, 95);
+  stroke-width: 1px;
+}
+* {
+  box-sizing: border-box;
+}
 
 .app {
   display: grid;
-  grid-template-rows: 65px 65px 1fr 50px;
-  height: 15vh;
 }
-
-/**** GLYPHS ****/
 
 .glyphs {
   display: grid;
-  grid-template-columns: repeat(26, 65px);
-  overflow-x: auto;
+  flex-direction: column;
+  grid-template-columns: repeat(2, minmax(30px, 1fr));
+  grid-auto-rows: minmax (100px, auto);
+  column-gap: 10px;
+  row-gap: 10px;
+  float: left;
 }
 
 .glyphs .glyph {
-  background: rgb(202, 202, 202);
-  color: rgb(8, 7, 7);
   display: grid;
-  place-items: center;
-  font-size: 30px;
+  background-color: rgb(202, 202, 202);
+  padding: 30px;
+  font-size: 35px;
   font-family: kaleidoscope;
   font-weight: 500;
-  cursor: pointer;
 }
-
-.glyphs .glyph:nth-child(even) {
-  background: rgb(237, 237, 237);
-}
-
 .glyphs .glyph.active {
   background-color: rgb(255, 185, 55);
 }
