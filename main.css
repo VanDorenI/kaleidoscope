@@ -64,6 +64,7 @@ body {
   text-align: center;
   padding: 0px 0;
   margin: 30px;
+  max-width: 100%;
 }
 
 .header h2 {
@@ -192,6 +193,7 @@ body {
 
 .side-by-side {
   display: flex;
+  max-height: 10px;
 }
 
 .button-light {
@@ -279,18 +281,22 @@ circle:hover {
   flex-direction: column;
   grid-template-columns: repeat(2, minmax(30px, 1fr));
   grid-auto-rows: minmax (100px, auto);
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 5px;
   float: left;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
 }
 
 .glyphs .glyph {
   display: grid;
   background-color: rgb(202, 202, 202);
   padding: 30px;
-  font-size: 35px;
+  font-size: 200%;
   font-family: kaleidoscope;
   font-weight: 500;
+  width: 100%;
+  height: 70%;
 }
 .glyphs .glyph.active {
   background-color: rgb(255, 185, 55);
