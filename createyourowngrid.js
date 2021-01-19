@@ -472,15 +472,15 @@ const app = Vue.createApp({
       const FLIP = 800;
       for (const command of path.commands) {
         if (command.type === "M" || command.type === "L") {
-          command.y = FLIP - command.y;
-          command.x -= dx;
+          command.y = Math.round(FLIP - command.y);
+          command.x = Math.round(command.x - dx);
         } else if (command.type === "C") {
-          command.x -= dx;
-          command.x1 -= dx;
-          command.x2 -= dx;
-          command.y = FLIP - command.y;
-          command.y1 = FLIP - command.y1;
-          command.y2 = FLIP - command.y2;
+          command.x = Math.round(command.x - dx);
+          command.x1 = Math.round(command.x1 - dx);
+          command.x2 = Math.round(command.x2 - dx);
+          command.y = Math.round(FLIP - command.y);
+          command.y1 = Math.round(FLIP - command.y1);
+          command.y2 = Math.round(FLIP - command.y2);
         }
       }
     },
