@@ -6,47 +6,48 @@
     <title>Kaleidoscope: create</title>
     <link rel="stylesheet" href="main.css" />
     <script src="https://unpkg.com/vue@next"></script>
-
+    <script src="lib/opentype.js"></script>
+    <script src="lib/path-data-parser.js"></script>
   </head>
-  <div class="buttons">
-    <a style="font-size:1,5vw;" href="index.html" class= button2> <- </a>
-  </div>
 
-
-  <div class="header">
-    <h3 style="font-size:1,5vw;">Kaleidoscope: create</h3>
-    <h5 style="font-size:1,5vw;">Make your own font with the kaleidoscope grid, just click on the grid to change the letters!</h5>
-  </div>
   <body>
-    <div class="side-by-side">
- <div class="app" width="500px" height="500px" viewBox="0 0 500 500">
-      <div class="glyphs">
-        <div
-          class="glyph"
-          v-for="glyph in glyphs"
-          @click="setCurrentGlyph(glyph)"
-          :class="{ active: glyph === currentGlyph }"
-        >
-          {{ glyph }}
+    <div class="wrapper">
+      <div class="buttons">
+        <a href="index.html" class="button2"> <- </a>
+      </div>
+
+      <div class="header">
+        <h3>Kaleidoscope: create</h3>
+        <h5>
+          Make your own font with the kaleidoscope grid, just click on the grid
+          to change the letters!
+        </h5>
+        <div>
+          <button id="exportButton" data-weight="regular">EXPORT</button>
         </div>
       </div>
-    </div>
-    <div id="canvas">>
-      <g id="rechts_onder_4_1_" display="inline">
-        <path id="light-part-vol-rechts-onder4" fill="#13582A" d="M233.452,539.684v-117h117
-          C350.452,487.301,298.069,539.684,233.452,539.684z" :visible="currentSegments.includes('part-vol-rechts-onder4')" />
-        <path id="regular-part-vol-rechts-onder4" fill="#13582A" d="M601.557,421.789v99c54.676,0,99-44.324,99-99
-          C667.557,421.789,634.557,421.789,601.557,421.789z"/>
-        <path id="bold-part-vol-rechts-onder4" fill="#13582A" d="M1050.662,421.789c0,44.735-36.265,81-81,81v-81H1050.662z"/>
-      </g>
-    </div>
-    <script src="createyourowngrid.js" width="500px" height="500px" viewBox="0 0 500 500" ></script>
-    
-    </div>
-  </div>
 
-    <div class="footer">
-      <p style="font-size:1,5vw;">Indra Van Doren</p>
+      <div class="side-by-side">
+        <div class="app">
+          <div class="glyphs">
+            <div
+              class="glyph"
+              v-for="glyph in glyphs"
+              @click="setCurrentGlyph(glyph)"
+              :class="{ active: glyph === currentGlyph }"
+            >
+              {{ glyph }}
+            </div>
+          </div>
+        </div>
+        <div id="canvas"></div>
+      </div>
+
+      <div class="footer">
+        <p>Indra Van Doren</p>
+      </div>
+      <!-- .app -->
     </div>
+    <script src="createyourowngrid.js"></script>
   </body>
 </html>

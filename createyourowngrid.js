@@ -1,6 +1,8 @@
 // het document
 console.log("hello");
 
+const KAPPA = ((-1 + Math.sqrt(2)) / 3) * 4;
+
 const canvas = document.getElementById("canvas");
 
 function copyText(text) {
@@ -27,9 +29,9 @@ function toShortSegmentName(fullName) {
 async function loadfont() {
   const res = await fetch("gridmaker-webversie-kaleidoscope-def.svg");
   const svgCode = await res.text();
-
   canvas.outerHTML = svgCode;
   const svg = document.querySelector("svg");
+
   const rects = svg.querySelectorAll("rect");
   for (const rect of rects) {
     rect.setAttribute("display", "inline");
@@ -275,6 +277,23 @@ const app = Vue.createApp({
           "Horiz-5",
         ],
       },
+      fontMap: {
+        A: { name: "A", segments: "A" },
+        B: { name: "B", segments: "B" },
+        C: { name: "C", segments: "C" },
+        D: { name: "D", segments: "D" },
+        E: { name: "E", segments: "E" },
+
+        // ....
+
+        a: { name: "a", segments: "A" },
+        b: { name: "b", segments: "B" },
+        c: { name: "c", segments: "C" },
+        d: { name: "d", segments: "D" },
+        e: { name: "e", segments: "E" },
+
+        // ....
+      },
       currentGlyph: "A",
       currentStyle: "regular",
     };
@@ -288,6 +307,61 @@ const app = Vue.createApp({
     setCurrentGlyph(glyph) {
       this.currentGlyph = glyph;
       this.updateVisibleSegments();
+    },
+    exportFont(weight) {
+      const glyphHeight = 800;
+      const glyphWidth = 200;
+      const advanceWidth = 400;
+      let shiftX = 0;
+      if (weight === "regular") {
+        shiftX = 400;
+      } else if (weight === "bold") {
+        shiftX = 800;
+      }
+
+      const glyphs = [];
+
+      const notdefGlyph = new opentype.Glyph({
+        name: ".notdef",
+        unicode: 0,
+        advanceWidth,
+        path: new opentype.Path(),
+      });
+      glyphs.push(notdefGlyph);
+
+      const space = new opentype.Glyph({
+        name: "space",
+        unicode: 32,
+        advanceWidth: 400,
+        path: new opentype.Path(),
+      });
+      glyphs.push(space);
+
+      for (const character in this.fontMap) {
+        const unicode = character.charCodeAt(0);
+        const glyphInfo = this.fontMap[character];
+        const name = glyphInfo.name;
+        const segments = this.filterSegments(weight, glyphInfo.segments);
+        const path = this.segmentsToPath(segments);
+        this.flipPath(path, shiftX);
+        const letterGlyph = new opentype.Glyph({
+          name,
+          unicode,
+          advanceWidth,
+          path,
+        });
+        glyphs.push(letterGlyph);
+      }
+
+      const exportFont = new opentype.Font({
+        familyName: "Kaleidoscope",
+        styleName: "Regular",
+        unitsPerEm: 1000,
+        ascender: 800,
+        descender: -200,
+        glyphs,
+      });
+      exportFont.download();
     },
     updateVisibleSegments() {
       const visibleSegmentNames = this.currentSegments;
@@ -306,6 +380,19 @@ const app = Vue.createApp({
           segment.setAttribute("fill", "rgba(0, 0, 0, 0)");
         }
       }
+    },
+    filterSegments(weight, glyphName) {
+      const segments = [];
+      const segmentsNames = this.allSegments[glyphName];
+      for (const segmentName of segmentsNames) {
+        const fullName = weight + "-" + segmentName;
+        const segment = document.getElementById(fullName);
+        if (!segment) {
+          throw new Error(`Could not find segment ${fullName}`);
+        }
+        segments.push(segment);
+      }
+      return segments;
     },
     copySegments() {
       const svg = document.querySelector("svg");
@@ -329,6 +416,74 @@ const app = Vue.createApp({
       // console.log(shortSegmentNames);
       copyText(JSON.stringify(Array.from(set)));
     },
+    segmentsToPath(segments) {
+      const path = new opentype.Path();
+      for (const segment of segments) {
+        if (segment.nodeName === "rect") {
+          const x = parseFloat(segment.getAttribute("x"));
+          const y = parseFloat(segment.getAttribute("y"));
+          const w = parseFloat(segment.getAttribute("width"));
+          const h = parseFloat(segment.getAttribute("height"));
+          const x1 = x;
+          const y1 = y;
+          const x2 = x1 + w;
+          const y2 = y1 + h;
+
+          path.moveTo(x1, y1);
+          path.lineTo(x2, y1);
+          path.lineTo(x2, y2);
+          path.lineTo(x1, y2);
+        } else if (segment.nodeName === "circle") {
+          const cx = parseFloat(segment.getAttribute("cx"));
+          const cy = parseFloat(segment.getAttribute("cy"));
+          const r = parseFloat(segment.getAttribute("r"));
+
+          const d = KAPPA * r;
+          const x1 = cx - r;
+          const x2 = cx + r;
+          const y1 = cy - r;
+          const y2 = cy + r;
+
+          path.moveTo(x1, cy);
+          path.curveTo(x1, cy - d, cx - d, y1, cx, y1);
+          path.curveTo(cx + d, y1, x2, cy - d, x2, cy);
+          path.curveTo(x2, cy + d, cx + d, y2, cx, y2);
+          path.curveTo(cx - d, y2, x1, cy + d, x1, cy);
+        } else if (segment.nodeName === "path") {
+          const d = segment.getAttribute("d");
+          const pathSegments = normalize(absolutize(parsePath(d)));
+
+          for (const seg of pathSegments) {
+            if (seg.key === "M") {
+              path.moveTo(...seg.data);
+            } else if (seg.key === "L") {
+              path.lineTo(...seg.data);
+            } else if (seg.key === "C") {
+              path.curveTo(...seg.data);
+            } else if (seg.key === "Z") {
+              path.close();
+            }
+          }
+        }
+      }
+      return path;
+    },
+    flipPath(path, dx = 0) {
+      const FLIP = 800;
+      for (const command of path.commands) {
+        if (command.type === "M" || command.type === "L") {
+          command.y = FLIP - command.y;
+          command.x -= dx;
+        } else if (command.type === "C") {
+          command.x -= dx;
+          command.x1 -= dx;
+          command.x2 -= dx;
+          command.y = FLIP - command.y;
+          command.y1 = FLIP - command.y1;
+          command.y2 = FLIP - command.y2;
+        }
+      }
+    },
   },
 });
 
@@ -338,4 +493,8 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
     mountedApp.copySegments();
   }
+});
+document.querySelector("#exportButton").addEventListener("click", (e) => {
+  const weight = e.target.dataset.weight;
+  mountedApp.exportFont(weight);
 });
