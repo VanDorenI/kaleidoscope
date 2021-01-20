@@ -175,21 +175,10 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-
-.button3 {
-  display: block;
-  border: none;
-  background-color: white;
-  padding: 1vw;
-  font-size: -5vw;
-  font-family: helvetica;
-  font-weight: lighter;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-bottom: 1vw;
+.exportButton1 {
+  background-color: green;
 }
+
 /**** PREVIEW TRY-OUT TEKST SCHIJVEN ****/
 .preview {
   font-size: 5vw;
@@ -284,7 +273,7 @@ body {
   font-family: helvetica;
   font-weight: lighter;
   padding: 3px;
-  margin-top: 10vw;
+  margin-top: 20vw;
 }
 
 .footer p {
@@ -309,14 +298,20 @@ circle:hover {
 * {
   box-sizing: border-box;
 }
-
+.app {
+  margin-left: 3vh;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
 .glyphs {
   display: grid;
   flex-direction: column;
   grid-template-columns: 3fr 3fr 3fr;
-  width: 100%;
+  width: 30%;
   gap: 1.5vw 2vh;
-  margin-top: 5vh;
+  margin-top: 3.5vh;
   margin-left: 3vh;
   cursor: pointer;
 }

@@ -539,3 +539,11 @@ document.querySelector("#exportButton").addEventListener("click", (e) => {
   const weight = e.target.dataset.weight;
   mountedApp.exportFont(weight);
 });
+document.querySelector("#exportButton1").addEventListener("click", (e) => {
+  const weight = e.target.dataset.weight;
+  mountedApp.exportFont(weight);
+});
+document.querySelector("#exportButton2").addEventListener("click", (e) => {
+  const weight = e.target.dataset.weight;
+  mountedApp.exportFont(weight);
+});
