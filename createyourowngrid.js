@@ -449,7 +449,7 @@ const app = Vue.createApp({
       const shortSegmentNames = visibleSegmentNames.map((fullName) =>
         fullName
           .replace("light-", "")
-          .replace("regular-", "")
+          .replace("regular-", "") 
           .replace("bold-", "")
       );
       const set = new Set(shortSegmentNames);
@@ -535,15 +535,15 @@ window.addEventListener("keydown", (e) => {
     mountedApp.copySegments();
   }
 });
-document.querySelector("#exportButton").addEventListener("click", (e) => {
-  const weight = e.target.dataset.weight;
-  mountedApp.exportFont(weight);
-});
 document.querySelector("#exportButton1").addEventListener("click", (e) => {
   const weight = e.target.dataset.weight;
   mountedApp.exportFont(weight);
 });
 document.querySelector("#exportButton2").addEventListener("click", (e) => {
+  const weight = e.target.dataset.weight;
+  mountedApp.exportFont(weight);
+});
+document.querySelector("#exportButton3").addEventListener("click", (e) => {
   const weight = e.target.dataset.weight;
   mountedApp.exportFont(weight);
 });

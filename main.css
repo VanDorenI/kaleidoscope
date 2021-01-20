@@ -107,6 +107,13 @@ body {
   margin-left: 11vw;
   margin-right: 11vw;
 }
+
+.header h6 {
+  text-align: left;
+  font-size: 1vw;
+  font-family: Helvetica;
+  font-weight: lighter;
+}
 /*** AFBEELDINGEN/BUTTON GRID***/
 
 .container {
@@ -159,6 +166,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   border-bottom: 1vw;
+  background-color: yellow;
 }
 
 .button2 {
@@ -175,8 +183,18 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.exportButton1 {
-  background-color: green;
+
+.downloadbuttons-typo {
+  display: grid;
+  color: white;
+  font-size: 3vw;
+  font-family: kaleidoscope;
+  font-weight: 200;
+  color: black;
+  cursor: pointer;
+  width: 20vw;
+  margin-left: 4vw;
+  margin-top: -8vw;
 }
 
 /**** PREVIEW TRY-OUT TEKST SCHIJVEN ****/
@@ -220,6 +238,7 @@ body {
 
 .side-by-side {
   display: flex;
+  margin-bottom: 10vw;
 }
 
 .button-light {
@@ -264,8 +283,6 @@ body {
 /*** FOOTER***/
 
 .footer {
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: rgb(255, 255, 255);
   color: rgb(148, 148, 148);
@@ -273,7 +290,7 @@ body {
   font-family: helvetica;
   font-weight: lighter;
   padding: 3px;
-  margin-top: 20vw;
+  margin-top: 10vw;
 }
 
 .footer p {
