@@ -283,7 +283,27 @@ const app = Vue.createApp({
         C: { name: "C", segments: "C" },
         D: { name: "D", segments: "D" },
         E: { name: "E", segments: "E" },
-
+        F: { name: "F", segments: "F" },
+        G: { name: "G", segments: "G" },
+        H: { name: "H", segments: "H" },
+        I: { name: "I", segments: "I" },
+        J: { name: "J", segments: "J" },
+        K: { name: "K", segments: "K" },
+        L: { name: "L", segments: "L" },
+        M: { name: "M", segments: "M" },
+        N: { name: "N", segments: "N" },
+        O: { name: "O", segments: "O" },
+        P: { name: "P", segments: "P" },
+        Q: { name: "Q", segments: "Q" },
+        R: { name: "R", segments: "R" },
+        S: { name: "S", segments: "S" },
+        T: { name: "T", segments: "T" },
+        U: { name: "U", segments: "U" },
+        V: { name: "V", segments: "V" },
+        W: { name: "W", segments: "W" },
+        X: { name: "X", segments: "X" },
+        Y: { name: "Y", segments: "Y" },
+        Z: { name: "Z", segments: "Z" },
         // ....
 
         a: { name: "a", segments: "A" },
@@ -291,7 +311,27 @@ const app = Vue.createApp({
         c: { name: "c", segments: "C" },
         d: { name: "d", segments: "D" },
         e: { name: "e", segments: "E" },
-
+        f: { name: "f", segments: "F" },
+        g: { name: "g", segments: "G" },
+        h: { name: "h", segments: "H" },
+        i: { name: "i", segments: "I" },
+        j: { name: "j", segments: "J" },
+        k: { name: "k", segments: "K" },
+        l: { name: "l", segments: "L" },
+        m: { name: "m", segments: "M" },
+        n: { name: "n", segments: "N" },
+        o: { name: "o", segments: "O" },
+        p: { name: "p", segments: "P" },
+        q: { name: "q", segments: "Q" },
+        r: { name: "r", segments: "R" },
+        s: { name: "s", segments: "S" },
+        t: { name: "t", segments: "T" },
+        u: { name: "u", segments: "U" },
+        v: { name: "v", segments: "V" },
+        w: { name: "w", segments: "W" },
+        x: { name: "x", segments: "X" },
+        y: { name: "y", segments: "Y" },
+        z: { name: "z", segments: "Z" },
         // ....
       },
       currentGlyph: "A",
@@ -354,8 +394,8 @@ const app = Vue.createApp({
       }
 
       const exportFont = new opentype.Font({
-        familyName: "Kaleidoscope",
-        styleName: "Regular",
+        familyName: "Kaleidoscope Creation",
+        styleName: "regular",
         unitsPerEm: 1000,
         ascender: 800,
         descender: -200,
@@ -363,6 +403,7 @@ const app = Vue.createApp({
       });
       exportFont.download();
     },
+
     updateVisibleSegments() {
       const visibleSegmentNames = this.currentSegments;
       console.log(this.currentGlyph, visibleSegmentNames);
