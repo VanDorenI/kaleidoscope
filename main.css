@@ -114,6 +114,14 @@ body {
   font-family: Helvetica;
   font-weight: lighter;
 }
+
+.header h7 {
+  font-size: 3vw;
+  font-family: kaleidoscope;
+  font-weight: 600;
+  color: rgb(250, 205, 121);
+  margin-top: 5vw;
+}
 /*** AFBEELDINGEN/BUTTON GRID***/
 
 .container {
@@ -166,7 +174,6 @@ body {
   text-decoration: none;
   cursor: pointer;
   border-bottom: 1vw;
-  background-color: yellow;
 }
 
 .button2 {
